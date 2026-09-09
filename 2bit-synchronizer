@@ -1,0 +1,13 @@
+module two_synchronizer(input   clk_in,
+                         input   sig_in,
+                         output  clk_out,
+                         output reg sig_out);   
+  reg pipe_0;
+
+  assign clk_out = clk_in;
+
+  always @(posedge clk_in) begin
+      pipe_0  <= sig_in;
+      sig_out <= pipe_0;
+  end
+endmodule
